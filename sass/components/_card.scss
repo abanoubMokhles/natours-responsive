@@ -1,0 +1,191 @@
+// Card
+
+.card {
+  position: relative;
+  // fix height collapse
+  height: 56rem;
+  // add Perspective to the card
+  perspective: 150rem;
+
+  &__side {
+    height: 56rem;
+    box-shadow: 0 0.5rem 1rem rgba($color-dark, 0.1);
+    // positioning the 2 cards above each other
+    position: absolute;
+    top: 0;
+    left: 0;
+    // fix width collapse
+    width: 100%;
+    // Hide the backside
+    backface-visibility: hidden;
+    transition: all 0.9s;
+
+    // cut image overflowing the radius
+    border-radius: 3px;
+    overflow: hidden;
+
+    &--front {
+      background-color: $color-light;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &--1 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+
+      &--2 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+
+      &--3 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+  // Rotate effect
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // Card Picture
+  &__picture {
+    height: 30rem;
+    // blending color with image
+    -webkit-background-blend-mode: screen;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    // Different cards
+    &--1 {
+      background: linear-gradient(
+          to bottom right,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg) center center/cover;
+    }
+    &--2 {
+      background: linear-gradient(
+          to bottom right,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../img/nat-6.jpg) center center/cover;
+    }
+    &--3 {
+      background: linear-gradient(
+          to bottom right,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/nat-7.jpg) center center/cover;
+    }
+  }
+
+  // Card Heading text
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-light;
+    position: absolute;
+    top: 18rem;
+    right: 2rem;
+    text-align: right;
+    line-height: 1.7;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+
+    // to apply the padding for every line
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to bottom right,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to bottom right,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to bottom right,
+        rgba($color-tertiary-light, 0.8),
+        rgba($color-tertiary-dark, 0.8)
+      );
+    }
+  }
+
+  // Card attributes
+  &__attributes {
+    padding: 3.6rem;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+
+      li {
+        font-size: 1.8rem;
+        text-transform: capitalize;
+        color: $color-light-grey;
+        display: flex;
+        gap: 0.8rem;
+      }
+    }
+  }
+
+  // Back side of the card
+  &__side--back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__cta {
+    text-align: center;
+  }
+
+  &__only {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-light;
+    margin-bottom: 2.4rem;
+  }
+
+  &__price {
+    font-size: 6rem;
+    font-weight: 100;
+    color: $color-light;
+    margin-bottom: 4.8rem;
+  }
+}

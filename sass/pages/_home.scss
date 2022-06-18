@@ -1,0 +1,41 @@
+/*==========================
+    Home Sections Styles
+==========================*/
+
+// section-about
+.section-about {
+  padding: 30rem 0 35rem;
+  background-color: $color-offwhite;
+  margin-top: -20rem;
+}
+
+// section-features
+.section-features {
+  padding: 25rem 0;
+  margin-top: -10rem;
+  background: linear-gradient(
+      to bottom right,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg) center center/cover;
+  position: relative;
+  transform: skewY(-6deg);
+
+  & > * {
+    transform: skewY(6deg);
+  }
+}
+
+// section-tours
+.section-tours {
+  padding: 25rem 0;
+  background-color: $color-offwhite;
+  margin-top: -10rem;
+}
+
+// section-story
+.section-story {
+  padding: 20rem 0;
+  background-color: #ddd;
+}

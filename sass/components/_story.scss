@@ -1,0 +1,42 @@
+// Story Component
+.story {
+  padding: 6rem;
+  padding-left: 9rem;
+  background-color: rgba($color-light, 0.7);
+  width: 75%;
+  margin: 0 auto;
+  // Clear the float
+  @include clearfix;
+
+  box-shadow: 0 1rem 3rem rgba($color-dark, 0.1);
+  border-radius: 3px;
+
+  transform: skewX(-10deg);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    transform: translateX(-3rem) skewX(10deg);
+    // to make the text wrap as if it was wrapping around a circle
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    // to make the shape a circle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+  }
+  &__image {
+    height: 100%;
+  }
+  &__text {
+    transform: skewX(10deg);
+    h3 {
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 1.9;
+    }
+  }
+}
