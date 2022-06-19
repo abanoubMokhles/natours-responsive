@@ -1,0 +1,31 @@
+/*--======= Form Component =======--*/
+.form {
+  &-group:not(:last-child) {
+    margin-bottom: 3.6rem;
+  }
+
+  &__input {
+    width: 75%;
+    display: block;
+    padding: 1.5rem 2rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    border: none;
+    background-color: rgba($color-light, 0.5);
+    border-bottom: 3px solid transparent;
+
+    &:focus {
+      outline: 0;
+      border: none;
+      border-bottom: 3px solid $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-dark, 0.1);
+    }
+  }
+
+  &__input::-webkit-input-placeholder {
+    color: $color-grey;
+  }
+
+  &__label {
+  }
+}
