@@ -363,6 +363,35 @@
                     >Email Address</label
                   >
                 </div>
+                <div class="form-group u-mr-b-large">
+                  <div class="form__radio-group">
+                    <input
+                      type="radio"
+                      name="size"
+                      id="small"
+                      class="form__radio-input"
+                    />
+                    <label for="small" class="form__radio-label">
+                      <span class="form__radio-btn"></span>
+                      small tour
+                    </label>
+                  </div>
+                  <div class="form__radio-group">
+                    <input
+                      type="radio"
+                      name="size"
+                      id="large"
+                      class="form__radio-input"
+                    />
+                    <label for="large" class="form__radio-label">
+                      <span class="form__radio-btn"></span>
+                      large tour
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn--green">Submit &rarr;</button>
+                </div>
               </form>
             </div>
           </div>
@@ -400,5 +429,51 @@
         </div>
       </section> -->
     </main>
+
+    <footer role="contentinfo" class="footer">
+      <div class="footer__logo-box">
+        <img
+          src="img/logo-green-2x.png"
+          alt="Natours logo"
+          class="footer__logo"
+        />
+      </div>
+      <div class="row">
+        <div class="col-1-of-2">
+          <div class="footer__navigation-box">
+            <nav role="navigation">
+              <ul class="footer__navigation">
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">Company</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">Contact us</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">Careers</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">Privacy policy</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">Terms</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <div class="footer__copyright-box">
+            <p class="footer__copyright">
+              <span id="year">Year</span> Copyright &copy; Natours llc. All
+              rights reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.querySelector("#year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
