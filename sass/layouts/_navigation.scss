@@ -1,0 +1,183 @@
+/*-=========== Navigation Layout ===========-*/
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+  &__button {
+    height: 7rem;
+    width: 7rem;
+    cursor: pointer;
+    background-color: $color-light;
+    box-shadow: 0 1rem 2rem rgba($color-dark, 0.1);
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    z-index: 3000;
+
+    // Align the dashes
+    text-align: center;
+
+    @include respond(port-tab) {
+      top: 3rem;
+      right: 4rem;
+    }
+    @include respond(phone) {
+      top: 2rem;
+      right: 3rem;
+    }
+  }
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    z-index: 1000;
+
+    // Animation effects
+    transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    @include respond(port-tab) {
+      top: 3.5rem;
+      right: 4.5rem;
+    }
+    @include respond(phone) {
+      top: 2.5rem;
+      right: 3.5rem;
+    }
+  }
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+
+    // Initial state that will change on click
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    // Animation effects
+    transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+  &__list {
+    list-style: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.7;
+  }
+
+  &__item {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    margin: 1rem;
+    font-weight: 300;
+
+    & span {
+      margin-right: 1rem;
+    }
+
+    @include respond(port-tab) {
+      font-size: 3rem;
+    }
+    @include respond(phone) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      color: $color-light;
+      text-decoration: none;
+      padding: 1rem 2rem;
+
+      // Background transparent-white background
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-light 50%
+      );
+      // Double the size of the background
+      background-size: 220%;
+
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:active {
+      // move to the white-bg area from the background
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
+  }
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+    visibility: visible;
+    pointer-events: all;
+  }
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  &__dash {
+    position: relative;
+    margin-top: 3.5rem;
+
+    // Common styles for the span and after, before
+    &,
+    &::after,
+    &::before {
+      width: 3rem;
+      height: 2px;
+      display: inline-block;
+      background-color: $color-grey;
+      transition: all 0.3s;
+    }
+
+    // after, before styles
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  &__checkbox:checked + &__button &__dash {
+    background-color: transparent;
+  }
+  &__checkbox:checked + &__button &__dash::after {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  &__checkbox:checked + &__button &__dash::before {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}

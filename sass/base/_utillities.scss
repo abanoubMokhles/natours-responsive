@@ -11,7 +11,14 @@
   margin-bottom: 1.8rem !important;
 }
 .u-mr-t-huge {
-  margin-bottom: 10rem !important;
+  margin-top: 10rem !important;
+
+  @include respond(port-tab) {
+    margin-top: 3rem !important;
+  }
+}
+.u-mr-t-medium {
+  margin-top: 4.8rem !important;
 }
 /*==========================
     Alignment Variables

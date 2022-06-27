@@ -2,11 +2,20 @@
       Grid Styles
 ==========================*/
 .row {
-  width: 114rem;
+  max-width: 114rem;
   margin: 0 auto;
+
+  @include respond(port-tab) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
 
   &:not(:last-child) {
     margin-bottom: $gutter-v;
+
+    @include respond(port-tab) {
+      margin-bottom: $gutter-v-small;
+    }
   }
 
   @include clearfix;
@@ -16,6 +25,15 @@
 
     &:not(:last-child) {
       margin-right: $gutter-h;
+
+      @include respond(port-tab) {
+        margin-right: 0;
+      }
+    }
+
+    @include respond(port-tab) {
+      width: 100% !important;
+      margin-bottom: $gutter-v-small;
     }
   }
 }

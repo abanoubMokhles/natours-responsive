@@ -17,14 +17,26 @@
     &--1 {
       top: -2rem;
       left: 0;
+
+      @include respond(port-tab) {
+        top: 0;
+      }
     }
     &--2 {
       top: 2rem;
       right: 0;
+
+      @include respond(port-tab) {
+        top: 1rem;
+      }
     }
     &--3 {
       top: 10rem;
       left: 20%;
+
+      @include respond(port-tab) {
+        top: -2rem;
+      }
     }
   }
 

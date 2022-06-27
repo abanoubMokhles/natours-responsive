@@ -16,6 +16,10 @@
   // For the <button> tag
   border: none;
 
+  @include respond(port-tab) {
+    line-height: 1.3;
+  }
+
   &::after {
     content: "";
     display: inline-block;

@@ -8,3 +8,44 @@
     clear: left;
   }
 }
+
+/*-======= Media Query Manager ========-*/
+// mobile phone     <  600px
+// Portrait tablet  <= 900px
+// Landscape tablet <= 1200px
+// Desktop          <= 1800px
+// Large Desktop    >  1800px
+
+/*-======= Breakpoint Names ========-*/
+// phone      <  600px
+// port-tab   <= 900px
+// land-tab   <= 1200px
+// desktop-l  >  1800px
+
+/*-======= Mobile Phone ========-*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == port-tab {
+    @media (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint == land-tab {
+    @media (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-l {
+    @media (min-width: 112.5em) {
+      // 1800px
+      @content;
+    }
+  }
+}

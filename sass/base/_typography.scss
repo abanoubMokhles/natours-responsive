@@ -5,15 +5,32 @@
   color: $color-light;
   font-weight: 400;
   line-height: 1.7;
+
   &--main {
     font-size: 6rem;
     display: block;
     letter-spacing: 3.5rem;
+
+    @include respond(port-tab) {
+      font-size: 4.8rem;
+      letter-spacing: 1.6rem;
+    }
+    @include respond(phone) {
+      letter-spacing: 1rem;
+    }
   }
   &--sub {
     font-size: 2rem;
     letter-spacing: 1.8rem;
     display: block;
+    @include respond(port-tab) {
+      font-size: 1.6rem;
+      letter-spacing: 0.9rem;
+    }
+    @include respond(phone) {
+      font-size: 1.7rem;
+      letter-spacing: 0.7rem;
+    }
   }
 }
 .heading-secondary {
@@ -29,6 +46,13 @@
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+
+  @include respond(port-tab) {
+    font-size: 3.2rem;
+  }
+  @include respond(phone) {
+    font-size: 2.4rem;
+  }
 }
 .heading-tertiary {
   font-size: 1.8rem;
@@ -36,6 +60,10 @@
   text-transform: uppercase;
   margin-bottom: 1.2rem;
   color: $color-dark-grey;
+
+  @include respond(phone) {
+    line-height: 1.5;
+  }
 }
 .paragraph {
   font-size: 1.6rem;

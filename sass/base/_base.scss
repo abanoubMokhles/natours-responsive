@@ -11,6 +11,16 @@
 }
 html {
   font-size: 62.5%; // 10px
+
+  @include respond(desktop-l) {
+    font-size: 75%;
+  }
+  @include respond(land-tab) {
+    font-size: 56.25%;
+  }
+  @include respond(port-tab) {
+    font-size: 50%;
+  }
 }
 body {
   box-sizing: border-box;
@@ -19,4 +29,9 @@ body {
   font-weight: 400;
   color: $color-grey;
   font-family: "Lato", sans-serif;
+  position: relative;
+
+  @include respond(port-tab) {
+    padding: 0;
+  }
 }

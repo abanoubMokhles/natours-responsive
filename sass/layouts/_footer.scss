@@ -17,6 +17,11 @@
     padding-top: 2rem;
     border-top: 1px solid $color-grey;
     display: inline-block;
+
+    @include respond(port-tab) {
+      display: block;
+      text-align: center;
+    }
   }
 
   &__navigation {
@@ -50,6 +55,12 @@
     border-top: 1px solid $color-grey;
     display: inline-block;
     float: right;
+
+    @include respond(port-tab) {
+      display: block;
+      float: none;
+      text-align: center;
+    }
   }
 
   &__copyright {

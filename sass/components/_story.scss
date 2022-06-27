@@ -31,6 +31,14 @@
 
     // fix image weird behaviour
     overflow: hidden;
+
+    @include respond(port-tab) {
+      // to make the text wrap as if it was wrapping around a circle
+      -webkit-shape-outside: none;
+      shape-outside: none;
+
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__image {
@@ -71,5 +79,14 @@
       font-size: 1.6rem;
       line-height: 1.9;
     }
+
+    @include respond(port-tab) {
+      transform: skewX(0);
+    }
+  }
+
+  @include respond(port-tab) {
+    transform: skewX(0);
+    width: 100%;
   }
 }
