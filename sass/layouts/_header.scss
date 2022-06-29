@@ -7,7 +7,9 @@
     ),
     url(../img/hero-small.jpg) center center/cover;
 
-  @media (min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px) {
+  @media (min-resolution: 192dpi) and (min-width: 600px),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 600px),
+    (min-width: 2000px) {
     background: linear-gradient(
         to bottom right,
         rgba($color-primary-light, 0.8),
@@ -15,6 +17,7 @@
       ),
       url(../img/hero.jpg) center center/cover;
   }
+
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
